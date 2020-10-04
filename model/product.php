@@ -21,7 +21,7 @@ class User {
     private $kind;
     private $createAt;
     private $updateAt;
-    
+    //-------------- TAG -------------------
     public $tagIdProduct = "idProduct";
     public $tagSkuProduct = "skuProduct";
     public $tagNameProduct = "nameProduct";
@@ -32,8 +32,9 @@ class User {
     public $tagDropPrices = "dropPrices";
     public $tagOriginalPrices = "originalPrices";
     public $tagWholesalePrices = "wholesalePrices";
-    
-    
+    public $tagRetailPrices = "retailPrices";
+    public $tagCreateAt = "createAt";
+    public $tagUpdateAt = "updateAt";
 
     function __construct() {
         
