@@ -1,10 +1,10 @@
 <?php 
   
 // Initialize a file URL to the variable 
-$url = "https://docs.google.com/uc?id=19k9bGH0JoYCa44bY-GAL7q3LK7fgO7c8"; 
+$url = "https://docs.google.com/spreadsheets/d/1AbxoAtX3L1O1xTDE2rrEtws13KLP7gNbAGamaZvauc0/export?format=xlsx";
   
 // Use basename() function to return the base name of file  
-$file_name = basename($url); 
+$file_name = "demo.xlsx"; 
    
 // Use file_get_contents() function to get the file 
 // from url and use file_put_contents() function to 
