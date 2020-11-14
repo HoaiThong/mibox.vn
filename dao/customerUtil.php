@@ -23,6 +23,7 @@ class CustomerUtil {
     function get_info_customer($idCustomer, $fcmtoken) {
         $idCus = (int) $idCustomer;
         try {
+            
             $sql = "CALL get_info_customer(:idCustomer,:fcmtoken)";
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(':idCustomer', $idCus, PDO::PARAM_INT);

@@ -8,7 +8,7 @@ class User{
     private $address;
     private $createAt;
     private $updateAt;
-    private $mappingTblProduct;
+    
             
     function __construct(){
         
@@ -41,10 +41,6 @@ class User{
         return $this->updateAt;
     }
 
-    function getMappingTblProduct() {
-        return $this->mappingTblProduct;
-    }
-
     function setIdStore($idStore): void {
         $this->idStore = $idStore;
     }
@@ -73,9 +69,6 @@ class User{
         $this->updateAt = $updateAt;
     }
 
-    function setMappingTblProduct($mappingTblProduct): void {
-        $this->mappingTblProduct = $mappingTblProduct;
-    }
 
 
 }

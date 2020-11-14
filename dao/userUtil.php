@@ -24,6 +24,36 @@ class UserUtil {
         $this->conn = null;
         // $this->db->closePDO();
     }
+    //--- signin by email, phone
+    function signin($username, $password) {
+        
+        try {
+            // Select * from tbluser where password like ? and (email like ? or phone like ?);
+            $sql = "CALL signin(:$username,:password)";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+            $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+
+            // Thiết lập kiểu dữ liệu trả về
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $stmt->execute();
+            $resultSet = $stmt->fetchAll();
+
+            /*
+             * Trong trường hợp chưa setFetchMode() bạn có thể sử dụng
+             * $resultSet = $stmt->fetchAll(PDO::FETCH_ASSOC);
+             */
+
+            $response["customer"] = $resultSet;
+            // success
+            $response[$this->success] = $this->success;
+            $response[$this->message] = "success";
+        } catch (PDOException $e) {
+            $response[$this->success] = $this->error;
+            $response[$this->message] = "error";
+        }
+        return $response;
+    }
 }
 ?>
 

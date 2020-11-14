@@ -1,14 +1,15 @@
 <?php
 
-class User {
+class Product {
 
     private $idProduct;
+    private $idStore;
     private $skuProduct;
     private $nameProduct;
     private $iconLink;
     private $imageSource;
     private $description;
-    private $quantity;
+    private $inventory;
     //--- Giá dropship ---
     private $dropPrices;
     //--- Giá gốc ---
@@ -17,31 +18,40 @@ class User {
     private $wholesalePrices;
     //--- giá bán lẻ ---
     private $retailPrices;
+    //--- đơn vị đo lường ----
+    private $unitProduct;
     //--- Phân loại hàng hóa ---
-    private $kind;
+    private $categoryProduct;
+    
     private $createAt;
     private $updateAt;
     //-------------- TAG -------------------
     public $tagIdProduct = "idProduct";
+    public $tagIdStore = "idStore";
     public $tagSkuProduct = "skuProduct";
     public $tagNameProduct = "nameProduct";
     public $tagIconLink = "iconLink";
     public $tagImageSource = "imageSource";
     public $tagDescription = "description";
-    public $tagQuantity = "quantity";
+    public $tagInventory = "inventory";
     public $tagDropPrices = "dropPrices";
     public $tagOriginalPrices = "originalPrices";
     public $tagWholesalePrices = "wholesalePrices";
     public $tagRetailPrices = "retailPrices";
+    public $tagUnitProduct="unitProduct";
+    public $tagCategoryProduct="category";
     public $tagCreateAt = "createAt";
     public $tagUpdateAt = "updateAt";
 
     function __construct() {
         
     }
-
     function getIdProduct() {
         return $this->idProduct;
+    }
+
+    function getIdStore() {
+        return $this->idStore;
     }
 
     function getSkuProduct() {
@@ -64,8 +74,8 @@ class User {
         return $this->description;
     }
 
-    function getQuantity() {
-        return $this->quantity;
+    function getInventory() {
+        return $this->inventory;
     }
 
     function getDropPrices() {
@@ -84,8 +94,12 @@ class User {
         return $this->retailPrices;
     }
 
-    function getKind() {
-        return $this->kind;
+    function getUnitProduct() {
+        return $this->unitProduct;
+    }
+
+    function getCategoryProduct() {
+        return $this->categoryProduct;
     }
 
     function getCreateAt() {
@@ -98,6 +112,10 @@ class User {
 
     function setIdProduct($idProduct): void {
         $this->idProduct = $idProduct;
+    }
+
+    function setIdStore($idStore): void {
+        $this->idStore = $idStore;
     }
 
     function setSkuProduct($skuProduct): void {
@@ -120,8 +138,8 @@ class User {
         $this->description = $description;
     }
 
-    function setQuantity($quantity): void {
-        $this->quantity = $quantity;
+    function setInventory($inventory): void {
+        $this->inventory = $inventory;
     }
 
     function setDropPrices($dropPrices): void {
@@ -140,8 +158,12 @@ class User {
         $this->retailPrices = $retailPrices;
     }
 
-    function setKind($kind): void {
-        $this->kind = $kind;
+    function setUnitProduct($unitProduct): void {
+        $this->unitProduct = $unitProduct;
+    }
+
+    function setCategoryProduct($categoryProduct): void {
+        $this->categoryProduct = $categoryProduct;
     }
 
     function setCreateAt($createAt): void {
@@ -151,6 +173,7 @@ class User {
     function setUpdateAt($updateAt): void {
         $this->updateAt = $updateAt;
     }
+
 
 }
 
