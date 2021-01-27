@@ -11,11 +11,17 @@ class DriveDAO {
 
     function downloads($url, $file_name) {
         // Initialize a file URL to the variable 
-        $url = "https://docs.google.com/spreadsheets/d/1AbxoAtX3L1O1xTDE2rrEtws13KLP7gNbAGamaZvauc0/export?format=xlsx";
-
+        // $url = "https://docs.google.com/spreadsheets/d/1AbxoAtX3L1O1xTDE2rrEtws13KLP7gNbAGamaZvauc0/export?format=xlsx";
 // Use basename() function to return the base name of file  
-        $file_name = "demo.xlsx";
+        //  $file_name = "demo.xlsx";
 
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $now = date("Y") . '-' . date("m") . '-' . date("d");
+        $folder = "downloads/$now";
+        if (!is_dir($folder)) {
+            mkdir($folder, 755, true);
+        }
+        $file_name = $folder . '/' . $file_name;
 // Use file_get_contents() function to get the file 
 // from url and use file_put_contents() function to 
 // save the file by using base name 
@@ -39,7 +45,9 @@ class DriveDAO {
 
     function getID($driveUrl) {
         // format: link goc: $driveUrl= https://drive.google.com/file/d/1r96CK91m2SLVKlXQFYQeRblayF6v-at8/view?usp=sharing
-        $id = "";
+
+        $array = explode("/", $driveUrl);
+        $id = $array[5];
         return $id;
     }
 
