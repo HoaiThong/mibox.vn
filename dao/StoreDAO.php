@@ -1,12 +1,7 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+class StoreDAO {
 
-class BillDAO{
     private $conn;
     private $message = "message";
     private $success = "success";
@@ -25,14 +20,18 @@ class BillDAO{
         // $this->db->closePDO();
     }
 
-    public function add_bill($param) {
+    public function create_store($param) {
         
     }
     
-    public function update_bill($param) {
+    public function update_store($param) {
         
     }
-    
+
+    public function get_store_info($param) {
+        
+    }
    
 }
+
 ?>

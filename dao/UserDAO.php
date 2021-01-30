@@ -50,6 +50,13 @@ class UserDAO {
         return $response;
     }
     
+    public function register($param) {
+        
+    }
+    
+    public function update_user($param) {
+        
+    }
     
 
 }

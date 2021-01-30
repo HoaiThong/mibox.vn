@@ -1,5 +1,5 @@
 <?php
-class User{
+class Store{
     
     private $idStore;
     private $nameStore;
@@ -8,12 +8,21 @@ class User{
     private $address;
     private $createAt;
     private $updateAt;
+    private $idUser;
     
             
     function __construct(){
         
     }
-    function getIdStore() {
+    function getIdUser() {
+        return $this->idUser;
+    }
+
+    function setIdUser($idUser): void {
+        $this->idUser = $idUser;
+    }
+
+        function getIdStore() {
         return $this->idStore;
     }
 

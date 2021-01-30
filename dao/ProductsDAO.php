@@ -1,6 +1,6 @@
 <?php
 
-class ProductUtil {
+class ProductDAO {
 
     private $conn;
     private $message = "message";
@@ -44,6 +44,18 @@ class ProductUtil {
             
         }
         return $resultSet;
+    }
+    
+    public function add_product($param) {
+        
+    }
+    
+    public function update_product($param) {
+        
+    }
+    
+    public function remove_product($param) {
+        
     }
 
    

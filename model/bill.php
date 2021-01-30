@@ -9,7 +9,8 @@ class Bill {
     private $quantity;
     //---tinh trang duyet don
     private $state;
-    private $time;
+    private $idExpress;
+    private $urlFileExpress;
     private $isPay;
 
 
@@ -43,8 +44,12 @@ class Bill {
         return $this->state;
     }
 
-    function getTime() {
-        return $this->time;
+    function getIdExpress() {
+        return $this->idExpress;
+    }
+
+    function getUrlFileExpress() {
+        return $this->urlFileExpress;
     }
 
     function getIsPay() {
@@ -83,8 +88,12 @@ class Bill {
         $this->state = $state;
     }
 
-    function setTime($time): void {
-        $this->time = $time;
+    function setIdExpress($idExpress): void {
+        $this->idExpress = $idExpress;
+    }
+
+    function setUrlFileExpress($urlFileExpress): void {
+        $this->urlFileExpress = $urlFileExpress;
     }
 
     function setIsPay($isPay): void {
@@ -98,6 +107,7 @@ class Bill {
     function setTagUpdateAt($tagUpdateAt): void {
         $this->tagUpdateAt = $tagUpdateAt;
     }
+
 
 
 
