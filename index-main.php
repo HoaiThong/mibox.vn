@@ -12,8 +12,9 @@ and open the template in the editor.
     <body>
         <?php
         // put your code here
-        require_once 'dao/UserUtil.php';
-        $util = new UserUtil();
+        require_once 'dao/UserDAO.php';
+        $util = new UserDAO();
+        echo "<br>index.php";
         ?>
     </body>
 </html>

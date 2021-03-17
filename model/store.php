@@ -1,6 +1,7 @@
 <?php
-class Store{
-    
+
+class Store {
+
     private $idStore;
     private $nameStore;
     private $phone;
@@ -8,12 +9,14 @@ class Store{
     private $address;
     private $createAt;
     private $updateAt;
+    private $optionCategory;
+    private $desciption;
     private $idUser;
-    
-            
-    function __construct(){
+
+    function __construct() {
         
     }
+
     function getIdUser() {
         return $this->idUser;
     }
@@ -22,7 +25,23 @@ class Store{
         $this->idUser = $idUser;
     }
 
-        function getIdStore() {
+    function getOptionCategory() {
+        return $this->optionCategory;
+    }
+
+    function getDesciption() {
+        return $this->desciption;
+    }
+
+    function setOptionCategory($optionCategory): void {
+        $this->optionCategory = $optionCategory;
+    }
+
+    function setDesciption($desciption): void {
+        $this->desciption = $desciption;
+    }
+
+    function getIdStore() {
         return $this->idStore;
     }
 
@@ -78,7 +97,6 @@ class Store{
         $this->updateAt = $updateAt;
     }
 
-
-
 }
+
 ?>
